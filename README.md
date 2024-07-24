@@ -1,16 +1,19 @@
 # open_dji_drone_robot
-This is a ROS 2 meta package for DJI drones
+This is a ROS 2 meta package for DJI drones.
 
-Currently it includes:
+Supported drones:
+theroetically all models compatiable with [DJI Mobile SDK V5](https://developer.dji.com/doc/mobile-sdk-tutorial/en/).
+
+Currently it includes the following packages:
 * [dji_drone_description](dji_drone_description/README.md)
 
 More will be added in the future.
 
 # Android app: DJI MSDK ROS 2 Driver
 
-ROS 2 Driver for DJI drones using DJI Mobile SDK V5
+ROS 2 Driver for DJI drones using DJI Mobile SDK V5.
 
-The Android app can be can be downloaded on the [releases](https://github.com/htnk-lab/open_dji_drone_robot/releases) page.
+The Android app can be downloaded on the [releases](https://github.com/htnk-lab/open_dji_drone_robot/releases) page.
      
 ## Dependencies
 [ffmpeg_image_transport](https://github.com/ros-misc-utilities/ffmpeg_image_transport)
