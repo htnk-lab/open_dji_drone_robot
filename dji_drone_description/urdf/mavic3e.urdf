@@ -1,0 +1,132 @@
+<robot name="DJI Mavic 3 Enterprise">
+  <link name="base_link"/>
+
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+  </joint>
+
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/body.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="yaw_joint" type="revolute">
+    <parent link="body_link"/>
+    <child  link="gimbal_0_link"/>
+    <origin xyz="0.087593 0 0.037652" rpy="0 0 0"/>
+    <axis xyz="-0.353505 0 0.935433"/>
+    <limit lower="-0.471239" upper="0.471239" effort="0" velocity="0"/>
+  </joint>
+
+  <link name="gimbal_0_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/gimbal_0.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="roll_joint" type="revolute">
+    <parent link="gimbal_0_link"/>
+    <child  link="gimbal_1_link"/>
+    <origin xyz="-0.014743 0 -0.032043" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-0.785398" upper="0.785398" effort="0" velocity="0"/>
+  </joint>
+
+  <link name="gimbal_1_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/gimbal_1.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="pitch_joint" type="revolute">
+    <parent link="gimbal_1_link"/>
+    <child  link="camera_link"/>
+    <origin xyz="0.0339 0 0.000792" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.74533" upper="2.35619" effort="0" velocity="0"/>
+  </joint>
+
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/camera.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_lf_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_lf_link"/>
+    <origin xyz="0.098178 0.159983 0.003555" rpy="0 0 0"/>
+    <axis xyz="-0.016012 -0.130219 -0.991356"/>
+  </joint>  
+
+    <link name="motor_lf_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/motor_lf.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_rf_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_rf_link"/>
+    <origin xyz="0.098176 -0.159967 0.003439" rpy="0 0 0"/>
+    <axis xyz="0.016012 -0.130219 0.991356"/>
+  </joint>  
+
+  <link name="motor_rf_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/motor_rf.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_lb_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_lb_link"/>
+    <origin xyz="-0.144319 0.126426 -0.003296" rpy="0 0 0"/>s
+    <axis xyz="0.023843 0.142307 0.989535"/>
+  </joint>  
+
+  <link name="motor_lb_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/motor_lb.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_rb_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_rb_link"/>
+    <origin xyz="-0.144317 -0.126434 -0.003243" rpy="0 0 0"/>
+    <axis xyz="-0.023843 0.142307 -0.989535"/>
+  </joint>  
+
+    <link name="motor_rb_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mavic3e/motor_rb.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+</robot>

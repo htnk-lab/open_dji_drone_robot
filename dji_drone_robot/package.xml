@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>dji_drone_robot</name>
+  <version>1.0.0</version>
+  <description>Meta package for DJI drones</description>
+  <maintainer email="zhiyuan@hfg.sc.e.titech.ac.jp">Lu Zhiyuan</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- <exec_depend>dji_drone_bringup</exec_depend> -->
+  <!-- <exec_depend>dji_drone_control</exec_depend> -->
+  <!-- <exec_depend>dji_drone_demos</exec_depend> -->
+  <!-- <exec_depend>dji_drone_msgs</exec_depend> -->
+  <!-- <exec_depend>dji_drone_rqt_plugins</exec_depend> -->
+  <!-- <exec_depend>dji_drone_rviz_plugins</exec_depend> -->
+  <exec_depend>dji_drone_description</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,133 @@
+<robot name="DJI Mini 3">
+  <link name="base_link"/>
+
+  <joint name="body_joint" type="fixed">
+    <parent link="base_link"/>
+    <child  link="body_link"/>
+    <origin xyz="0 0 0" rpy="0 -0.2495821 0"/>
+  </joint>
+
+  <link name="body_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/body.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="pitch_joint" type="revolute">
+    <parent link="body_link"/>
+    <child  link="gimbal_0_link"/>
+    <origin xyz="0.058822 0.000000 -0.013600" rpy="0 0.2495821 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit lower="-2.356194" upper="1.396263" effort="0" velocity="0"/>
+  </joint>
+
+  <link name="gimbal_0_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/gimbal_0.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="yaw_joint" type="revolute">
+    <parent link="gimbal_0_link"/>
+    <child  link="gimbal_1_link"/>
+    <origin xyz="-0.004286 0.000042 -0.012021" rpy="0 0 0"/>
+    <axis xyz="0.362817 0.000000 0.931860"/>
+    <limit lower="-0.523599" upper="0.523599" effort="0" velocity="0"/>
+  </joint>
+
+  <link name="gimbal_1_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/gimbal_1.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="roll_joint" type="revolute">
+    <parent link="gimbal_1_link"/>
+    <child  link="camera_link"/>
+    <origin xyz="0.000026 0.000012 0.018170" rpy="0 0 0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <limit lower="-2.356194" upper="0.785398" effort="0" velocity="0"/>
+  </joint>
+
+  <link name="camera_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/camera.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_lf_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_lf_link"/>
+    <origin xyz="0.064564 0.114086 -0.007539" rpy="0 0 0"/>
+    <axis xyz="-0.272644 -0.153602 -0.949774"/>
+  </joint>
+
+  <link name="motor_lf_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/motor_lf.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_rf_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_rf_link"/>
+    <origin xyz="0.064564 -0.114086 -0.007538" rpy="0 0 0"/>
+    <axis xyz="0.273828 -0.153549 0.949442"/>
+  </joint>
+
+  <link name="motor_rf_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/motor_rf.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_lb_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_lb_link"/>
+    <origin xyz="-0.086253 0.081498 0.020741" rpy="0 0 0"/>
+    <axis xyz="0.225402 0.129350 0.965641"/>
+  </joint>  
+
+  <link name="motor_lb_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/motor_lb.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <joint name="motor_rb_joint" type="continuous">
+    <parent link="body_link"/>
+    <child  link="motor_rb_link"/>
+    <origin xyz="-0.086254 -0.081413 0.020732" rpy="0 0 0"/>
+    <axis xyz="-0.240425 0.140674 -0.960420"/>
+  </joint>  
+
+    <link name="motor_rb_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://dji_drone_description/meshes/mini3/motor_rb.dae" />
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+</robot>
